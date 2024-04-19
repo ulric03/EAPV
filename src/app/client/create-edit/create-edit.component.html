@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<br>
+<div class="mx-[25%]">
+  <form [formGroup]="formCliente" (ngSubmit)="onSubmit()" >
+      
+      <mat-form-field class="w-full"  appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" [(ngModel)]="client.name" class="form-control" name="name" id="nome" formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput [matDatepicker]="picker" [value]="client.dateBirth" class="form-control" name="dataNascimento" id="dataNascimento" formControlName="dateBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+  
+      <mat-form-field class="w-full" appearance="fill" floatLabel="always">
+        <mat-label>Valor da venda</mat-label>
+        <input matInput type="number" [(ngModel)]="client.saleValue" class="form-control" name="valor" id="valor" formControlName="saleValue" placeholder="0">
+        <span matPrefix>R$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+  
+      <mat-form-field class="w-full" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput type="text" [(ngModel)]="client.cpf" class="form-control" name="cpf" id="cpf" formControlName="cpf" 
+          [specialCharacters]="['-', '.']"
+          mask="000.000.000-00"
+        >
+      </mat-form-field>
+      
+      <br>
+      <button mat-button color="primary" type="submit">Salvar</button>
+      <button mat-button color="warn" [routerLink]="['/client/list']">Cancelar</button>
+    </form>
+
+</div>

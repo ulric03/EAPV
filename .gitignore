@@ -29,14 +29,19 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+/UI/.angular/cache
+/UI.sass-cache/
+/UI/connect.lock
+/UI/coverage
+/UI/libpeerconnection.log
+/UI/testem.log
+/UI/typings
 
 # System files
 .DS_Store
 Thumbs.db
+
+# System files
+/API/bin/*
+/API/obj/*
+/API/.vs/*
